@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/models/user.class';
 
 @Component({
   selector: 'app-dialog-add-user',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogAddUserComponent implements OnInit {
 
+  user = new User();
+  birthDate!: Date;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  saveUser() {
+    this.user.birthDate = this.birthDate.getTime(); // Zeit, die nach dem 01.01.1070 vergangen ist in ms.
+    console.log('User', this.user);
   }
 
 }
