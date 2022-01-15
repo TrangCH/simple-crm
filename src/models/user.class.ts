@@ -24,4 +24,15 @@ export class User {
         this.zipCode = obj ? obj.zipCode : '';
         this.city = obj ? obj.city : '';
     }
+
+    public toJSON() {
+        return {
+            firstName: this.firstName,
+            lastName: this.lastName,
+            birthDate: this.birthDate, // timestam reinkopieren. Komplexe Datentypen wir ein Date Objekt können wir nicht speichern.
+            street: this.street,
+            zipCode: this.zipCode,
+            city: this.city
+        }
+    }
 }
