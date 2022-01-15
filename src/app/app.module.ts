@@ -22,6 +22,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatCardModule } from '@angular/material/card';
 
 // import { MomentDateModule } from '@angular/material-moment-adapter';
 
@@ -49,7 +50,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatCardModule
     // MomentDateModule
   ],
   providers: [],
