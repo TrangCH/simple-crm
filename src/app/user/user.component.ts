@@ -12,7 +12,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 export class UserComponent implements OnInit {
 
   user = new User();
-  allUsers = [];
+  allUsers : any = [];
 
   /**
    * public dialog: MatDialog ist wichtig, damit man schon bereits vorhandenen Funktionen aus Angular verwenden kann.
@@ -22,7 +22,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     this.firestore
-    .collection('users') // Hier, welche collection wir abonnieren möchten. Wie bei dialog-add-user.comp.ts
+    .collection('user') // Hier, welche collection wir abonnieren möchten. Wie bei dialog-add-user.comp.ts
     .valueChanges() // Immer, wenn sich das Ding ändert, dann abonnieren wir diese Änderung:
     .subscribe((changes: any) => {
       console.log('Received changes from DB', changes);
