@@ -1,6 +1,7 @@
 export class User {
     firstName: string;
     lastName: string;
+    email!: string;
     birthDate: number; // timestam reinkopieren. Komplexe Datentypen wir ein Date Objekt können wir nicht speichern.
     street: string;
     zipCode: number;
@@ -19,6 +20,7 @@ export class User {
         // Möglichkeit zur If-Else-Abfrage, nur kürzer und schneller:
         this.firstName = obj ? obj.firstName : '';
         this.lastName = obj ? obj.lastName : '';
+        this.email = obj ? obj.email : '';
         this.birthDate = obj ? obj.birthDate : '';
         this.street = obj ? obj.street : '';
         this.zipCode = obj ? obj.zipCode : '';
@@ -29,6 +31,7 @@ export class User {
         return {
             firstName: this.firstName,
             lastName: this.lastName,
+            email: this.email,
             birthDate: this.birthDate, // timestam reinkopieren. Komplexe Datentypen wir ein Date Objekt können wir nicht speichern.
             street: this.street,
             zipCode: this.zipCode,
