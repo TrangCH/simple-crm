@@ -22,7 +22,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     this.firestore
-    .collection('user') // Hier, welche collection wir abonnieren möchten. Wie bei dialog-add-user.comp.ts
+    .collection('users') // Hier, welche collection wir abonnieren möchten. Wie bei dialog-add-user.comp.ts
     .valueChanges({idField: 'customIdName'}) // Immer, wenn sich das Ding ändert, dann abonnieren wir diese Änderung:
     .subscribe((changes: any) => {
       console.log('Received changes from DB', changes);
