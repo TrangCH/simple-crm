@@ -10,6 +10,10 @@
 
 <!-- Karte hinzufügen -->
 <mat-card class="margin-top-32">
+    <button mat-icon-button class="pin-right-upper-corner" (click)="openAddressDialog()">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+
     <mat-card-title>Address</mat-card-title>
     <mat-card-content>
         {{ user.street }} <br>
