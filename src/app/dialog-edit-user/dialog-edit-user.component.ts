@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { User } from 'src/models/user.class';
 
 @Component({
   selector: 'app-dialog-edit-user',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogEditUserComponent implements OnInit {
 
-  constructor() { }
+  user!: User;
+  birthDate!: Date;
+  loading = false;
+
+  constructor(public dialogRef: MatDialogRef<DialogEditUserComponent>) { }
 
   ngOnInit(): void {
+  }
+
+  saveUser() {
+    
   }
 
 }
