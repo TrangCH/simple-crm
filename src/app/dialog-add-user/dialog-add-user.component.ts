@@ -21,7 +21,7 @@ export class DialogAddUserComponent implements OnInit {
   }
 
   saveUser() {
-    this.user.birthDate = this.birthDate.getTime(); // Zeit, die nach dem 01.01.1070 vergangen ist in ms.
+    //this.user.birthDate = this.birthDate.getTime(); // Zeit, die nach dem 01.01.1070 vergangen ist in ms.
     console.log('User', this.user);
 
     this.loading = true;

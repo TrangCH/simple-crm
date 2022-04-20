@@ -10,7 +10,7 @@ import { User } from 'src/models/user.class';
 })
 export class DialogEditUserComponent implements OnInit {
 
-  user!: User;
+  user: User = new User(); // Neues Objekt User, ohne Inhalte.
   userId!: string;
   birthDate!: Date;
   loading = false;
@@ -21,15 +21,19 @@ export class DialogEditUserComponent implements OnInit {
   }
 
   saveUser() {
-    this.loading = true;
-    this.firestore
-    .collection('users')
-    .doc(this.userId)
-    .update(this.user.toJSON())
-    .then(() =>{
-      this.loading = false;
-      this.dialogRef.close();
-    });
+    if (this.userId) {
+      this.loading = true;
+      this.firestore
+        .collection('users')
+        .doc(this.userId)
+        .update(this.user.toJSON())
+        .then(() => {
+          this.loading = false;
+          this.dialogRef.close();
+        });
+    } else {
+      // Throw error
+    }
   }
 
 }

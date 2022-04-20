@@ -10,7 +10,9 @@ import { User } from 'src/models/user.class';
 })
 export class DialogEditAddressComponent implements OnInit {
 
-  user!: User;
+  user: User = new User(); // Wir packen einen leeren Mock-User, 
+                            // damit im HTML darauf zugegriffen werden kann. 
+                            // Es hat keinen Namen etc., aber das Objekt exisitiert schon mal. Two-way-binding
   userId!: string;
   loading = false;
 
